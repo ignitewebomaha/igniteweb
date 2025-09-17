@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio | Ignite Web Omaha</title>
+  <meta name="description" content="A gallery of websites designed and built by Ignite Web Co. Clean, fast, SEO-ready sites for Omaha small businesses." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ignite Web Co — Portfolio" />
+  <meta property="og:description" content="Browse recent websites and landing pages built by Ignite Web Co." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ignitewebomaha.com/portfolio.html" />
+  <meta property="og:image" content="/og-image.jpg" />
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <style>
+    :root {
+      --bg: #0b0b0d;
+      --card: #141419;
+      --muted: #9aa3b2;
+      --text: #e8eef8;
+      --accent: #0ea5e9; /* sky-500 */
+      --accent-2: #38bdf8; /* sky-400 */
+      --border: #1f2430;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(14,165,233,.08), transparent 60%),
+                  radial-gradient(1000px 500px at -10% 10%, rgba(56,189,248,.06), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      line-height: 1.55;
+    }
+
+    /* Header / Nav (keep simple so you can drop into current site) */
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+    header { position: sticky; top: 0; backdrop-filter: blur(8px); background: linear-gradient(180deg, rgba(11,11,13,.85), rgba(11,11,13,.65)); border-bottom: 1px solid var(--border); z-index: 50; }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { font-weight:700; letter-spacing:.5px; }
+    .brand a { color: var(--text); text-decoration:none; }
+    nav a { color: var(--muted); text-decoration:none; margin-left: 18px; }
+    nav a:hover { color: var(--text); }
+
+    /* Page heading */
+    .page-hero { padding: 48px 0 8px; }
+    .eyebrow { color: var(--accent-2); font-weight:600; font-size:.9rem; letter-spacing:.12em; text-transform:uppercase; }
+    h1 { margin: 6px 0 12px; font-size: clamp(1.6rem, 2.6vw, 2.4rem); }
+    p.lede { margin: 0; color: var(--muted); max-width: 70ch; }
+
+    /* Controls */
+    .controls { display:flex; flex-wrap:wrap; gap: 12px; align-items:center; margin: 28px 0 8px; }
+    .search { flex: 1 1 260px; min-width: 220px; }
+    .search input { width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--border); background: #0f1014; color: var(--text); outline: none; }
+    .search input::placeholder { color: #657086; }
+
+    .chipbar { display:flex; flex-wrap:wrap; gap: 8px; }
+    .chip { border: 1px solid var(--border); background: #0f1014; color: var(--muted); padding: 8px 12px; border-radius: 999px; font-size: .9rem; cursor: pointer; user-select:none; }
+    .chip.active { background: rgba(14,165,233,.15); color: #cfeafe; border-color: rgba(14,165,233,.45); }
+
+    /* Grid */
+    .grid { display:grid; grid-template-columns: repeat(1, 1fr); gap: 18px; margin-top: 20px; }
+    @media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 980px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .card { position: relative; background: linear-gradient(180deg, #161924, #121521); border: 1px solid var(--border); border-radius: 18px;  overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,.25); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0,0,0,.35); border-color: rgba(14,165,233,.35); }
+    .thumb {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  object-fit: cover;
+  object-position: top center; /* or center center */
+}
+    .card-body { padding: 14px 14px 16px; }
+    .title { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .title h3 { font-size: 1rem; margin: 2px 0 0; }
+    .title .pill { font-size:.75rem; color:#b6c3d9; background: #0e121a; border: 1px solid var(--border); padding: 6px 10px; border-radius: 999px; white-space: nowrap; }
+    .desc { margin: 8px 0 12px; color: var(--muted); font-size: .95rem; min-height: 3.2em; }
+
+    .tags { display:flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .tag { font-size: .75rem; color:#b7c7db; background: #0f131b; border: 1px dashed #243046; padding: 5px 8px; border-radius: 999px; }
+
+    .actions { display:flex; align-items:center; justify-content: space-between; gap: 10px; }
+    .btn { appearance:none; border: 1px solid var(--border); background: #0e121a; color: var(--text); padding: 10px 12px; border-radius: 12px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; font-weight:600; cursor:pointer; }
+    .btn:hover { border-color: rgba(14,165,233,.45); background: rgba(14,165,233,.1); }
+    .btn svg { width: 16px; height: 16px; }
+
+    .empty { display:none; text-align:center; color: var(--muted); padding: 40px 0; }
+
+    footer { border-top: 1px solid var(--border); color: var(--muted); margin-top: 44px; padding: 24px 0; font-size:.95rem; }
+    .brand-logo { background-color: #0ea5e9; height: 30px; width: 30px; border-radius: 10px; margin-right: 10px;}
+    .container-nav { display: flex; flex-direction: row; justify-content: center; padding: 20px;}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container-nav">
+    <div class="brand-logo"></div>
+      <span class="brand"><a href="index.html">Ignite Web Co</a></span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="eyebrow">Recent Work</div>
+      <h1 id="page-title">Websites I’ve built</h1>
+      <p class="lede">A growing gallery of real client projects and demo builds. Filter by type, search by name, and click through to see them live.</p>
+
+      <div class="controls" role="region" aria-label="Filters and search">
+        <div class="search">
+          <label for="search" class="sr-only">Search projects</label>
+          <input id="search" type="search" placeholder="Search projects (e.g., flooring, restaurant, landing page)" autocomplete="off" />
+        </div>
+        <div id="chips" class="chipbar" role="tablist" aria-label="Project filters"></div>
+      </div>
+    </section>
+
+    <section>
+      <div id="grid" class="grid" aria-live="polite"></div>
+      <div id="empty" class="empty">No projects match your filters yet. Try clearing filters or search.</div>
+    </section>
+
+    <footer>
+      <div class="container" style="padding:0">
+        © <span id="year"></span> Ignite Web Co. All rights reserved.
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // --- Data: Add your projects here ---
+    // image: use a 1200x675 (16:9) JPG/WEBP placed in /projects/ or an absolute URL
+    // tags: used for filtering; keep them lowercase for consistency
+    const PROJECTS = [
+      {
+        title: "Superior Flooring",
+        url: "https://superiorflooringomaha.com/",
+        image: "/photos/SuperiorLAnding.png",
+        type: "Multi‑page",
+        tags: ["services", "flooring", "local seo", "multi-page"],
+        description: "Local flooring company site with services, gallery, and contact form. Optimized for Omaha local SEO."
+      },
+      {
+        title: "BrightPath Tutors — Demo Landing",
+        url: "https://ignitewebomaha.github.io/samplelandingpage/",
+        image: "/photos/samplewebsite.png",
+        type: "Landing Page",
+        tags: ["landing", "lead gen", "fast"],
+        description: "High‑conversion one‑pager template with above‑the‑fold CTA and lightweight analytics."
+      },
+      {
+        title: "Restaurant Concept — Demo",
+        url: "https://ignitewebomaha.github.io/glowing-lamp/",
+        image: "/photos/luminaweb.png",
+        type: "Multi‑page",
+        tags: ["restaurant", "menu", "gallery", "multi-page"],
+        description: "Modern restaurant demo with sticky menu, photo gallery, and online reservation CTA."
+      },
+      // Add more objects as you build new sites
+    ];
+
+    // --- Build filter chip list from tags present in PROJECTS ---
+    const allTags = Array.from(new Set(PROJECTS.flatMap(p => p.tags))).sort();
+    const chipsEl = document.getElementById('chips');
+    const gridEl = document.getElementById('grid');
+    const emptyEl = document.getElementById('empty');
+    const searchEl = document.getElementById('search');
+
+    const state = { activeTags: new Set(), query: '' };
+
+    function chip(label) {
+      const el = document.createElement('button');
+      el.className = 'chip';
+      el.type = 'button';
+      el.setAttribute('role','tab');
+      el.textContent = label;
+      el.onclick = () => {
+        if (state.activeTags.has(label)) state.activeTags.delete(label); else state.activeTags.add(label);
+        el.classList.toggle('active');
+        render();
+      };
+      return el;
+    }
+
+    // Add a special "All" chip to clear
+    const clearBtn = document.createElement('button');
+    clearBtn.className = 'chip active';
+    clearBtn.type = 'button';
+    clearBtn.textContent = 'All';
+    clearBtn.onclick = () => { state.activeTags.clear(); searchEl.value = ''; state.query = ''; document.querySelectorAll('.chip').forEach(c => c.classList.remove('active')); clearBtn.classList.add('active'); render(); };
+    chipsEl.appendChild(clearBtn);
+
+    // Regular chips
+    for (const t of allTags) chipsEl.appendChild(chip(t));
+
+    // Search
+    searchEl.addEventListener('input', (e) => {
+      state.query = e.target.value.toLowerCase().trim();
+      // Turn off the All chip when searching
+      clearBtn.classList.remove('active');
+      render();
+    });
+
+    function matches(project) {
+      const q = state.query;
+      // Filter by tags (if any selected)
+      if (state.activeTags.size) {
+        const hasAll = [...state.activeTags].every(t => project.tags.includes(t));
+        if (!hasAll) return false;
+      }
+      // Search match against title, desc, tags, type
+      if (q) {
+        const hay = (project.title + ' ' + project.description + ' ' + project.tags.join(' ') + ' ' + project.type).toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    }
+
+    function iconExternal() {
+      return `<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 3h7v7" stroke="currentColor" stroke-width="1.5"/><path d="M10 14L21 3" stroke="currentColor" stroke-width="1.5"/><path d="M21 14v7h-7" stroke="currentColor" stroke-width="1.5"/><path d="M3 10V3h7" stroke="currentColor" stroke-width="1.5"/></svg>`;
+    }
+
+    function card(project) {
+      const li = document.createElement('article');
+      li.className = 'card';
+      li.innerHTML = `
+        <img class="thumb" src="${project.image}" alt="Screenshot of ${project.title}" loading="lazy" decoding="async" />
+        <div class="card-body">
+          <div class="title">
+            <h3>${project.title}</h3>
+            <span class="pill">${project.type}</span>
+          </div>
+          <p class="desc">${project.description}</p>
+          <div class="tags">${project.tags.map(t => `<span class='tag'>${t}</span>`).join('')}</div>
+          <div class="actions">
+            <a class="btn" href="${project.url}" target="_blank" rel="noopener noreferrer">
+              ${iconExternal()} <span>View site</span>
+            </a>
+            <a class="btn" href="mailto:ignitewebomaha@yahoo.com?subject=I want a site like ${encodeURIComponent(project.title)}">
+              <!-- simple mailto CTA -->
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v12H3z" stroke="currentColor"/><path d="m3 6 9 7 9-7" stroke="currentColor"/></svg>
+              <span>Get one like this</span>
+            </a>
+          </div>
+        </div>
+      `;
+      return li;
+    }
+
+    function render() {
+      gridEl.innerHTML = '';
+      const items = PROJECTS.filter(matches);
+      for (const p of items) gridEl.appendChild(card(p));
+      emptyEl.style.display = items.length ? 'none' : 'block';
+    }
+
+    // Init
+    document.getElementById('year').textContent = new Date().getFullYear();
+    render();
+  </script>
+
+  <!-- Basic screen-reader only class -->
+  <style>
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+</body>
+</html>
