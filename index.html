@@ -20,6 +20,15 @@
   <link rel="icon" href="/assets/ignite-icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css"/>
 
+  <!-- Minimal inline CSS for the toast so it works out of the box -->
+  <style>
+    #formStatus{min-height:1.5rem}
+    .form-toast{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);background:rgba(0,0,0,.85);color:#fff;padding:10px 14px;border-radius:10px;font-size:.95rem;box-shadow:0 6px 16px rgba(0,0,0,.35);backdrop-filter:blur(6px);z-index:9999;opacity:0;transition:opacity .25s ease}
+    .form-toast.show{opacity:1}
+    .form-toast.success{background:rgba(22,163,74,.95)}
+    .form-toast.error{background:rgba(220,38,38,.95)}
+  </style>
+
   <!-- JSON-LD -->
   <script type="application/ld+json">
   {
@@ -259,11 +268,7 @@
       <p class="muted">Tell me about your project.</p>
     </div>
     <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-      <form
-        id="contactForm"
-        action="https://formspree.io/f/xeolpezw"
-        method="POST"
-      >
+      <form id="contactForm" action="https://formspree.io/f/xeolpezw" method="POST">
         <input type="hidden" name="_subject" value="New project inquiry" />
 
         <input type="text" name="name" placeholder="Your name" required autocomplete="name" />
@@ -318,7 +323,7 @@
 
   <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // ----- Reveal on scroll (header .hero + sections)
+    /* ---------- Reveal on scroll (header .hero + sections) ---------- */
     const revealTargets = document.querySelectorAll("section, header .hero");
     const prime = el => {
       el.style.opacity = 0;
@@ -338,7 +343,7 @@
     window.addEventListener("scroll", tryReveal, { passive: true });
     tryReveal();
 
-    // ----- Intersection Observer for .reveal elements
+    /* ---------- Intersection Observer for .reveal elements ---------- */
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -349,7 +354,7 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    // ----- Mobile menu toggle (ARIA + close on link)
+    /* ---------- Mobile menu toggle (ARIA + close on link) ---------- */
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     const setMenuState = (open) => {
@@ -361,20 +366,15 @@
       const open = mobileMenu.style.display === 'block';
       setMenuState(!open);
     });
-    // Close when a mobile link is clicked
     document.querySelectorAll('#mobileMenu a').forEach(a => {
       a.addEventListener('click', () => setMenuState(false));
     });
 
-    // ----- Quote calculator
+    /* ---------- Quote calculator ---------- */
     const quoteForm = document.getElementById('quoteForm');
     const totalEl = document.getElementById('quoteTotal');
     const estimateField = document.getElementById('estimateField');
     const sendQuoteBtn = document.getElementById('sendQuote');
-
-    // Ensure prices align with labels
-    const multi = quoteForm.querySelector('input[name="multi"]');
-    if (multi) multi.value = "1500";
 
     function formatUSD(n) {
       return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(n);
@@ -396,24 +396,50 @@
     calcQuote();
 
     // Prefill message with estimate + focus
-    sendQuoteBtn.addEventListener('click', () => {
-      const msg = document.getElementById('message');
-      const current = (msg.value || '').trim();
-      const add = `\n\nEstimated package total: ${estimateField.value}`;
-      msg.value = current ? current + add : `Hi Dylan, I'd like to start a project. ${add}`;
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-      msg.focus();
-    });
+    if (sendQuoteBtn) {
+      sendQuoteBtn.addEventListener('click', () => {
+        const msg = document.getElementById('message');
+        const current = (msg.value || '').trim();
+        const add = `\n\nEstimated package total: ${estimateField.value}`;
+        msg.value = current ? current + add : `Hi Dylan, I'd like to start a project. ${add}`;
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        msg.focus();
+      });
+    }
 
-    // ----- Footer year
-    document.getElementById('yr').textContent = new Date().getFullYear();
+    /* ---------- Footer year ---------- */
+    const yr = document.getElementById('yr');
+    if (yr) yr.textContent = new Date().getFullYear();
 
-    // ----- Contact form async submit (Formspree)
-    const form = document.getElementById('contactForm');
-    const statusEl = document.getElementById('formStatus');
+    /* ---------- Contact form async submit (Formspree) ---------- */
+    function showToast(msg, kind = 'success') {
+      const t = document.createElement('div');
+      t.className = `form-toast ${kind}`;
+      t.textContent = msg;
+      document.body.appendChild(t);
+      requestAnimationFrame(() => t.classList.add('show'));
+      setTimeout(() => {
+        t.classList.remove('show');
+        setTimeout(() => t.remove(), 250);
+      }, 3000);
+    }
 
     async function handleSubmit(event) {
       event.preventDefault();
+
+      const form = document.getElementById('contactForm');
+      const statusEl = document.getElementById('formStatus');
+      const submitBtn = form.querySelector('button[type="submit"]');
+
+      // Close mobile keyboard to reveal status line
+      if (document.activeElement && typeof document.activeElement.blur === 'function') {
+        document.activeElement.blur();
+      }
+
+      // Disable submit UI, set sending state
+      submitBtn.disabled = true;
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
       statusEl.textContent = 'Sending...';
       statusEl.style.color = '';
 
@@ -429,25 +455,39 @@
         if (response.ok) {
           statusEl.textContent = '✅ Thanks! Your message has been sent.';
           statusEl.style.color = 'lightgreen';
+          statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          showToast('Message sent!', 'success');
+
           form.reset();
-          document.getElementById('estimateField').value = '$0';
-          document.getElementById('quoteTotal').textContent = '$0';
+          if (estimateField) estimateField.value = '$0';
+          if (totalEl) totalEl.textContent = '$0';
+
+          // Optional: nudge view to top so success is clearly visible
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
           const result = await response.json().catch(() => ({}));
-          if (result.errors) {
-            statusEl.textContent = result.errors.map(e => e.message).join(', ');
-          } else {
-            statusEl.textContent = '⚠️ Oops! There was a problem submitting your form.';
-          }
+          const msg = result && result.errors
+            ? result.errors.map(e => e.message).join(', ')
+            : '⚠️ Oops! There was a problem submitting your form.';
+
+          statusEl.textContent = msg;
           statusEl.style.color = 'salmon';
+          statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          showToast('Submit failed. Try again.', 'error');
         }
-      } catch (error) {
+      } catch (err) {
         statusEl.textContent = '⚠️ Network error—please try again.';
         statusEl.style.color = 'salmon';
+        statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        showToast('Network error. Try again.', 'error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
       }
     }
 
-    form.addEventListener('submit', handleSubmit);
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', handleSubmit);
   });
   </script>
 </body>
