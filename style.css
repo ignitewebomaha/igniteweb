@@ -483,6 +483,26 @@
     }
   }
 }
+.form-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,.85);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,.35);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.form-toast.show { opacity: 1; }
+.form-toast.success { background: rgba(22, 163, 74, .95); }
+.form-toast.error   { background: rgba(220, 38, 38, .95); }
+
 
     .website-picture {
       height: 300px;
@@ -492,3 +512,4 @@
       text-decoration: none;
 
     }
+
