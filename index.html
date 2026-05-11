@@ -3,49 +3,49 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Ignite Web | Web Designer & Developer</title>
+  <title>Ignite Web Co | Web Design & App Development</title>
 
-  <!-- Primary SEO -->
-  <meta name="description" content="Ignite Web Co builds clean, fast, SEO-ready websites for Omaha small businesses. 1–2 week turnarounds, mobile-first, conversion-focused." />
+  <meta name="description" content="Ignite Web Co, operated by Precision App Co, LLC, builds clean websites and software apps for small businesses and field professionals." />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Ignite Web Co — Web Designer in Omaha">
-  <meta property="og:description" content="Clean, fast, SEO-ready websites that convert. 1–2 week turnarounds.">
+  <meta property="og:title" content="Ignite Web Co — Web Design & App Development">
+  <meta property="og:description" content="Clean websites, business tools, and mobile app projects by Precision App Co, LLC.">
   <meta property="og:url" content="https://ignitewebomaha.com/">
-  <meta property="og:image" content="https://ignitewebomaha.com/igniteweblanding.png">
+  <meta property="og:image" content="https://ignitewebomaha.com/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="canonical" href="https://ignitewebomaha.com/">
   <link rel="icon" href="/assets/ignite-icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css"/>
 
-  <!-- Minimal inline CSS for the toast so it works out of the box -->
   <style>
     #formStatus{min-height:1.5rem}
     .form-toast{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);background:rgba(0,0,0,.85);color:#fff;padding:10px 14px;border-radius:10px;font-size:.95rem;box-shadow:0 6px 16px rgba(0,0,0,.35);backdrop-filter:blur(6px);z-index:9999;opacity:0;transition:opacity .25s ease}
     .form-toast.show{opacity:1}
     .form-toast.success{background:rgba(22,163,74,.95)}
     .form-toast.error{background:rgba(220,38,38,.95)}
+    .app-card{border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:22px;background:rgba(255,255,255,.04)}
+    .app-card h3{margin-top:0}
+    .app-status{display:inline-block;margin-bottom:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.08);font-size:.85rem}
   </style>
 
-  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "Organization",
     "name": "Ignite Web Co",
+    "legalName": "Precision App Co, LLC",
     "url": "https://ignitewebomaha.com",
     "telephone": "+1-402-517-8710",
+    "email": "ignitewebomaha@yahoo.com",
     "areaServed": "Omaha, NE",
-    "image": "https://ignitewebomaha.com/assets/ignite-wordmark.svg",
-    "description": "Freelance web design in Omaha — fast, mobile-first, SEO-ready sites.",
+    "description": "Nebraska-based web design, software, and mobile app development company.",
     "sameAs": []
   }
   </script>
 </head>
+
 <body>
-  <!-- NAV -->
   <nav class="nav">
     <div class="container nav-inner">
       <a class="brand" href="#top">
@@ -55,60 +55,62 @@
       <div aria-label="Primary" class="menu">
         <a href="#services">Services</a>
         <a href="portfolio.html">See My Work</a>
+        <a href="#apps">Apps</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <a class="btn btn-primary" href="#quote">Get a Quote</a>
       </div>
       <button aria-label="Open Menu" aria-controls="mobileMenu" aria-expanded="false" class="hamburger" id="menuBtn">☰</button>
     </div>
+
     <div class="mobile-container" id="mobileMenu">
       <a href="#services">Services</a>
       <a href="portfolio.html">See My Work</a>
+      <a href="#apps">Apps</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
       <a class="btn btn-primary" href="#quote">Get a Quote</a>
     </div>
   </nav>
 
-  <!-- HERO -->
   <header class="container" id="top" style="padding:54px 0 24px">
     <div class="hero">
       <div>
-        <span class="kicker pill">Freelance Web Design • Omaha</span>
-        <h1 class="title">I build high-performance websites that convert.</h1>
-        <p class="subtitle">Fast, mobile-first, and SEO-ready. From landing pages to full business sites, I help local brands look premium and book more jobs.</p>
+        <span class="kicker pill">Web Design • Software • Omaha</span>
+        <h1 class="title">I build high-performance websites and software tools.</h1>
+        <p class="subtitle">
+          Ignite Web Co is operated by <strong>Precision App Co, LLC</strong>, a Nebraska-based company building websites, digital tools, and mobile app projects.
+        </p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="portfolio.html">See my work</a>
+          <a class="btn" href="#apps">View apps</a>
           <a class="btn" href="#contact">Questions?</a>
         </div>
         <div class="stats">
           <div class="stat">⚡ <strong>1-2 week</strong> turnarounds</div>
           <div class="stat">📈 <strong>SEO</strong> best practices</div>
-          <div class="stat">🛠️ <strong>Maintenance</strong> available</div>
+          <div class="stat">📱 <strong>Apps</strong> in development</div>
         </div>
       </div>
+
       <div class="hero-card">
         <strong>Featured: Superior Flooring</strong>
-        <p class="muted">Dark luxury theme, sticky nav, smooth animations, optimized contact funnel.
-          Click the image to see!
-        </p>
-        <div style="display:grid;grid-template-columns:1fr;gap:10px">
-          <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.08)">
-            <a href="https://superiorflooringomaha.com/" rel="noreferrer noopener" target="_blank">
-              <img alt="Flooring project sample" class="website-picture" loading="lazy" src="photos/SuperiorLAnding.png"/>
-            </a>
-          </div>
+        <p class="muted">Dark luxury theme, sticky nav, smooth animations, optimized contact funnel.</p>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.08)">
+          <a href="https://superiorflooringomaha.com/" rel="noreferrer noopener" target="_blank">
+            <img alt="Flooring project sample" class="website-picture" loading="lazy" src="photos/SuperiorLAnding.png"/>
+          </a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- SERVICES -->
   <section class="container" id="services">
     <div class="section-head">
       <h2 class="section-title">Services</h2>
       <p class="muted">Simple packages, clear deliverables.</p>
     </div>
+
     <div class="grid services">
       <article class="card reveal">
         <span class="pill">Starter</span>
@@ -117,11 +119,12 @@
         <p class="price">From $600</p>
         <ul>
           <li>Responsive design</li>
-          <li>Copy &amp; sections included</li>
+          <li>Copy & sections included</li>
           <li>Contact form</li>
         </ul>
         <a class="btn" href="#contact">Book this</a>
       </article>
+
       <article class="card reveal">
         <span class="pill">Business</span>
         <h3>Multi-Page Website</h3>
@@ -134,96 +137,127 @@
         </ul>
         <a class="btn" href="#contact">Book this</a>
       </article>
+
       <article class="card reveal">
-        <span class="pill">Add-ons</span>
-        <h3>Upgrades &amp; Care</h3>
-        <p class="muted">Branding polish, copywriting, site speed, monthly maintenance.</p>
-        <p class="price">$50–$300</p>
+        <span class="pill">Software</span>
+        <h3>Apps & Digital Tools</h3>
+        <p class="muted">Internal tools, calculators, mobile app concepts, and business automation.</p>
+        <p class="price">Custom</p>
         <ul>
-          <li>Logo &amp; brand accents</li>
-          <li>Blog &amp; CMS setup</li>
-          <li>Maintenance</li>
+          <li>App planning</li>
+          <li>Field tools</li>
+          <li>Workflow automation</li>
         </ul>
-        <a class="btn" href="#quote">Estimate cost</a>
+        <a class="btn" href="#apps">View apps</a>
       </article>
     </div>
   </section>
 
-  <!-- WORK -->
+  <section class="container" id="apps">
+    <div class="section-head">
+      <h2 class="section-title">Apps & Software</h2>
+      <p class="muted">Mobile app and software projects developed under Precision App Co, LLC</p>
+    </div>
+
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+      <article class="app-card reveal">
+        <span class="app-status">In Development</span>
+        <h3>Fire Alarm Field Pro</h3>
+        <p class="muted">
+          A mobile field tool for fire alarm professionals with project organization, field calculators, and AI-assisted fire alarm support.
+        </p>
+        <ul>
+          <li>Voltage drop tools</li>
+          <li>Battery calculation support</li>
+          <li>Field-friendly project workflow</li>
+          <li>AI fire alarm assistant</li>
+        </ul>
+      </article>
+
+      <article class="app-card reveal">
+        <span class="app-status">Future Projects</span>
+        <h3>Business Tools</h3>
+        <p class="muted">
+          Ignite Web Co is also exploring simple software tools for small businesses, contractors, and service-based companies.
+        </p>
+        <a class="btn" href="#contact">Ask about software</a>
+      </article>
+    </div>
+  </section>
+
   <section class="container" id="work">
     <div class="grid work">
       <article class="project reveal">
         <h3>Contact Form</h3>
         <img alt="Project preview" loading="lazy" src="photos/contactform.webp"/>
         <div class="overlay">
-          <p class="work-p">Fast, accessible contact forms with real-time validation, 
-            spam protection, and instant delivery to your inbox—so you never miss a lead.</p>
+          <p class="work-p">Fast, accessible contact forms with real-time validation, spam protection, and instant delivery to your inbox.</p>
         </div>
       </article>
+
       <article class="project reveal">
         <h3>Responsive Design</h3>
         <img alt="Project preview" loading="lazy" src="photos/responsivedesign.png"/>
         <div class="overlay">
-          <p class="work-p">One design, every device—seamless and consistent. 
-            Modern, responsive sites built for speed and usability.</p>
+          <p class="work-p">One design, every device — seamless and consistent.</p>
         </div>
       </article>
+
       <article class="project reveal">
         <h3>Search Engine Optimization</h3>
         <img alt="Project preview" loading="lazy" src="photos/seodesign.png"/>
         <div class="overlay">
-          <p class="work-p">Search-friendly sites with smart keywords, metadata, and blazing performance. SEO-ready from day one—clean markup, fast load, and keywords that rank.</p>
+          <p class="work-p">Search-friendly sites with smart keywords, metadata, and blazing performance.</p>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section class="container" id="about">
     <div class="section-head">
       <h2 class="section-title">About</h2>
       <p class="muted">Friendly, reliable, detail-obsessed.</p>
     </div>
+
     <div class="about">
       <div class="about-card reveal">
         <h3>Hey, I’m Dylan.</h3>
-        <p>I design &amp; build websites that make small businesses look premium and book more work. My style is clean, modern, and fast — with a focus on conversion and mobile experience.</p>
+        <p>
+          I design and build websites, apps, and digital tools that help small businesses look premium, book more work, and operate more efficiently.
+        </p>
+        <p>
+          Ignite Web Co is operated by <strong>Precision App Co, LLC</strong>, a Nebraska-based software and web development company.
+        </p>
+
         <div class="stack">
           <span class="chip">HTML</span>
           <span class="chip">CSS</span>
           <span class="chip">JavaScript</span>
-          <span class="chip">React (learning)</span>
+          <span class="chip">React</span>
+          <span class="chip">React Native</span>
           <span class="chip">SEO</span>
-          <span class="chip">Netlify / GitHub Pages</span>
-        </div>
-        <div class="codelogo">
-          <img alt="HTML5 logo" loading="lazy" src="photos/html5-48.png"/>
-          <img alt="CSS3 logo" loading="lazy" src="photos/css3-48.png"/>
-          <img alt="JavaScript logo" loading="lazy" src="photos/javascript.png"/>
-          <img alt="React logo" loading="lazy" src="photos/react-native-48.png"/>
-          <img alt="SEO icon" loading="lazy" src="photos/seo-48.png"/>
-          <img alt="GitHub logo" loading="lazy" src="photos/github-48.png"/>
         </div>
       </div>
+
       <div class="about-card reveal">
         <h3>What you can expect</h3>
         <ul>
-          <li>Clear communication &amp; fast replies</li>
-          <li>Polished visual design &amp; animations</li>
-          <li>On-page SEO &amp; performance</li>
-          <li>Hand-off with easy edits</li>
+          <li>Clear communication & fast replies</li>
+          <li>Polished visual design</li>
+          <li>On-page SEO & performance</li>
+          <li>App and software project planning</li>
         </ul>
         <a class="btn" href="#contact">Contact Now</a>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
   <section class="container" id="testimonials">
     <div class="section-head">
       <h2 class="section-title">Kind Words</h2>
       <p class="muted">Social proof wins deals.</p>
     </div>
+
     <div class="grid testis">
       <div class="quote reveal">
         <p>“Dylan turned our rough ideas into a site that books real jobs.”</p>
@@ -240,12 +274,12 @@
     </div>
   </section>
 
-  <!-- QUOTE CALCULATOR -->
   <section class="container" id="quote">
     <div class="section-head">
       <h2 class="section-title">Instant Estimate</h2>
       <p class="muted">Pick what you need. Get a ballpark number.</p>
     </div>
+
     <div class="card reveal" style="max-width:860px;margin:auto">
       <form id="quoteForm">
         <label><input name="lp" type="checkbox" value="600"/> One-page Landing ($600)</label>
@@ -253,6 +287,7 @@
         <label><input name="logo" type="checkbox" value="200"/> Logo / Branding ($200)</label>
         <label><input name="blog" type="checkbox" value="250"/> Blog / CMS Setup ($250)</label>
         <label><input data-recurring="" name="maint" type="checkbox" value="75"/> Monthly Maintenance ($75/mo)</label>
+
         <div class="grid" style="grid-template-columns:1fr auto;align-items:center;margin-top:10px">
           <strong>Total: <span id="quoteTotal">$0</span></strong>
           <button class="cta" id="sendQuote" type="button">Send message to Ignite Web Co</button>
@@ -261,12 +296,12 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section class="container" id="contact">
     <div class="section-head">
       <h2 class="section-title">Contact</h2>
       <p class="muted">Tell me about your project.</p>
     </div>
+
     <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
       <form id="contactForm" action="https://formspree.io/f/xeolpezw" method="POST">
         <input type="hidden" name="_subject" value="New project inquiry" />
@@ -283,38 +318,32 @@
         </select>
 
         <textarea name="message" id="message" placeholder="What are you building?" required></textarea>
-
-        <!-- Hidden field for your quote calculator -->
         <input id="estimateField" name="estimate" type="hidden" value="$0" />
-
-        <!-- Honeypot (spam protection) -->
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
         <button class="cta" type="submit">Send Message</button>
-
-        <!-- Status message area -->
         <p id="formStatus" class="muted" aria-live="polite" style="margin-top:10px;"></p>
       </form>
 
       <div class="about-card reveal">
         <h3>Availability</h3>
-        <p>Booking <strong>2 new projects</strong> for next month. Omaha &amp; remote.</p>
+        <p>Booking <strong>2 new projects</strong> for next month. Omaha & remote.</p>
         <p class="muted">Prefer text or email? Totally good — I’ll adapt to how you like to work.</p>
         <div class="stack">
-          <span class="chip">Turnkey sites</span>
-          <span class="chip">Site refresh</span>
+          <span class="chip">Websites</span>
           <span class="chip">Landing pages</span>
+          <span class="chip">App projects</span>
+          <span class="chip">Business tools</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container footer-grid">
-      <a href="mailto:ignitewebomaha@yahoo.com">Send Email</a>
+      <a href="mailto:ignitewebomaha@yahoo.com">ignitewebomaha@yahoo.com</a>
       <a href="tel:+14025178710">402-517-8710</a>
-      <small>© <span id="yr"></span> Ignite Web Co · All rights reserved</small>
+      <small>© <span id="yr"></span> Ignite Web Co, operated by Precision App Co, LLC · All rights reserved</small>
       <div class="socials">
         <p>icons by <a href="https://icons8.com" id="icons8" rel="noreferrer noopener" target="_blank">Icons8</a></p>
       </div>
@@ -323,13 +352,14 @@
 
   <script>
   document.addEventListener("DOMContentLoaded", () => {
-    /* ---------- Reveal on scroll (header .hero + sections) ---------- */
     const revealTargets = document.querySelectorAll("section, header .hero");
+
     const prime = el => {
       el.style.opacity = 0;
       el.style.transform = "translateY(50px)";
       el.style.transition = "all 0.6s ease-out";
     };
+
     const tryReveal = () => {
       revealTargets.forEach(sec => {
         const rect = sec.getBoundingClientRect();
@@ -339,87 +369,104 @@
         }
       });
     };
+
     revealTargets.forEach(prime);
     window.addEventListener("scroll", tryReveal, { passive: true });
     tryReveal();
 
-    /* ---------- Intersection Observer for .reveal elements ---------- */
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          e.target.classList.add('in');
+          e.target.classList.add("in");
           io.unobserve(e.target);
         }
       });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    /* ---------- Mobile menu toggle (ARIA + close on link) ---------- */
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
     const setMenuState = (open) => {
-      mobileMenu.style.display = open ? 'block' : 'none';
-      menuBtn.setAttribute('aria-label', open ? 'Close Menu' : 'Open Menu');
-      menuBtn.setAttribute('aria-expanded', String(open));
+      mobileMenu.style.display = open ? "block" : "none";
+      menuBtn.setAttribute("aria-label", open ? "Close Menu" : "Open Menu");
+      menuBtn.setAttribute("aria-expanded", String(open));
     };
-    menuBtn.addEventListener('click', () => {
-      const open = mobileMenu.style.display === 'block';
+
+    menuBtn.addEventListener("click", () => {
+      const open = mobileMenu.style.display === "block";
       setMenuState(!open);
     });
-    document.querySelectorAll('#mobileMenu a').forEach(a => {
-      a.addEventListener('click', () => setMenuState(false));
+
+    document.querySelectorAll("#mobileMenu a").forEach(a => {
+      a.addEventListener("click", () => setMenuState(false));
     });
 
-    /* ---------- Quote calculator ---------- */
-    const quoteForm = document.getElementById('quoteForm');
-    const totalEl = document.getElementById('quoteTotal');
-    const estimateField = document.getElementById('estimateField');
-    const sendQuoteBtn = document.getElementById('sendQuote');
+    const quoteForm = document.getElementById("quoteForm");
+    const totalEl = document.getElementById("quoteTotal");
+    const estimateField = document.getElementById("estimateField");
+    const sendQuoteBtn = document.getElementById("sendQuote");
 
     function formatUSD(n) {
-      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(n);
+      return new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD"
+      }).format(n);
     }
+
     function calcQuote() {
       const fd = new FormData(quoteForm);
-      let total = 0, monthly = 0;
+      let total = 0;
+      let monthly = 0;
+
       for (const [k, v] of fd.entries()) {
         const n = Number(v) || 0;
         total += n;
+
         const field = quoteForm.querySelector(`[name="${k}"]`);
-        if (field && field.hasAttribute('data-recurring')) monthly += n;
+        if (field && field.hasAttribute("data-recurring")) monthly += n;
       }
-      const text = monthly > 0 ? `${formatUSD(total)} + ${formatUSD(monthly)}/mo` : formatUSD(total);
+
+      const text = monthly > 0
+        ? `${formatUSD(total)} + ${formatUSD(monthly)}/mo`
+        : formatUSD(total);
+
       totalEl.textContent = text;
       estimateField.value = text;
     }
-    quoteForm.addEventListener('change', calcQuote);
+
+    quoteForm.addEventListener("change", calcQuote);
     calcQuote();
 
-    // Prefill message with estimate + focus
     if (sendQuoteBtn) {
-      sendQuoteBtn.addEventListener('click', () => {
-        const msg = document.getElementById('message');
-        const current = (msg.value || '').trim();
+      sendQuoteBtn.addEventListener("click", () => {
+        const msg = document.getElementById("message");
+        const current = (msg.value || "").trim();
         const add = `\n\nEstimated package total: ${estimateField.value}`;
-        msg.value = current ? current + add : `Hi Dylan, I'd like to start a project. ${add}`;
-        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+
+        msg.value = current
+          ? current + add
+          : `Hi Dylan, I'd like to start a project. ${add}`;
+
+        document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
         msg.focus();
       });
     }
 
-    /* ---------- Footer year ---------- */
-    const yr = document.getElementById('yr');
+    const yr = document.getElementById("yr");
     if (yr) yr.textContent = new Date().getFullYear();
 
-    /* ---------- Contact form async submit (Formspree) ---------- */
-    function showToast(msg, kind = 'success') {
-      const t = document.createElement('div');
+    function showToast(msg, kind = "success") {
+      const t = document.createElement("div");
       t.className = `form-toast ${kind}`;
       t.textContent = msg;
       document.body.appendChild(t);
-      requestAnimationFrame(() => t.classList.add('show'));
+
+      requestAnimationFrame(() => t.classList.add("show"));
+
       setTimeout(() => {
-        t.classList.remove('show');
+        t.classList.remove("show");
         setTimeout(() => t.remove(), 250);
       }, 3000);
     }
@@ -427,21 +474,19 @@
     async function handleSubmit(event) {
       event.preventDefault();
 
-      const form = document.getElementById('contactForm');
-      const statusEl = document.getElementById('formStatus');
+      const form = document.getElementById("contactForm");
+      const statusEl = document.getElementById("formStatus");
       const submitBtn = form.querySelector('button[type="submit"]');
 
-      // Close mobile keyboard to reveal status line
-      if (document.activeElement && typeof document.activeElement.blur === 'function') {
+      if (document.activeElement && typeof document.activeElement.blur === "function") {
         document.activeElement.blur();
       }
 
-      // Disable submit UI, set sending state
       submitBtn.disabled = true;
       const originalBtnText = submitBtn.textContent;
-      submitBtn.textContent = 'Sending...';
-      statusEl.textContent = 'Sending...';
-      statusEl.style.color = '';
+      submitBtn.textContent = "Sending...";
+      statusEl.textContent = "Sending...";
+      statusEl.style.color = "";
 
       const data = new FormData(form);
 
@@ -449,45 +494,41 @@
         const response = await fetch(form.action, {
           method: form.method,
           body: data,
-          headers: { 'Accept': 'application/json' }
+          headers: { "Accept": "application/json" }
         });
 
         if (response.ok) {
-          statusEl.textContent = '✅ Thanks! Your message has been sent.';
-          statusEl.style.color = 'lightgreen';
-          statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          showToast('Message sent!', 'success');
+          statusEl.textContent = "✅ Thanks! Your message has been sent.";
+          statusEl.style.color = "lightgreen";
+          showToast("Message sent!", "success");
 
           form.reset();
-          if (estimateField) estimateField.value = '$0';
-          if (totalEl) totalEl.textContent = '$0';
+          if (estimateField) estimateField.value = "$0";
+          if (totalEl) totalEl.textContent = "$0";
 
-          // Optional: nudge view to top so success is clearly visible
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          window.scrollTo({ top: 0, behavior: "smooth" });
         } else {
           const result = await response.json().catch(() => ({}));
           const msg = result && result.errors
-            ? result.errors.map(e => e.message).join(', ')
-            : '⚠️ Oops! There was a problem submitting your form.';
+            ? result.errors.map(e => e.message).join(", ")
+            : "⚠️ Oops! There was a problem submitting your form.";
 
           statusEl.textContent = msg;
-          statusEl.style.color = 'salmon';
-          statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          showToast('Submit failed. Try again.', 'error');
+          statusEl.style.color = "salmon";
+          showToast("Submit failed. Try again.", "error");
         }
       } catch (err) {
-        statusEl.textContent = '⚠️ Network error—please try again.';
-        statusEl.style.color = 'salmon';
-        statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        showToast('Network error. Try again.', 'error');
+        statusEl.textContent = "⚠️ Network error—please try again.";
+        statusEl.style.color = "salmon";
+        showToast("Network error. Try again.", "error");
       } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = originalBtnText;
       }
     }
 
-    const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', handleSubmit);
+    const contactForm = document.getElementById("contactForm");
+    contactForm.addEventListener("submit", handleSubmit);
   });
   </script>
 </body>
