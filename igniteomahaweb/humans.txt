@@ -1,0 +1,6 @@
+/* TEAM */
+Developer: Ignite Web Co
+Site: https://ignitewebomaha.com
+
+/* THANKS */
+Tools: HTML, CSS, JS
