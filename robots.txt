@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://igniteweb.co/sitemap.xml
+Sitemap: https://ignitewebomaha.com/sitemap.xml

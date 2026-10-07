@@ -1,23 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio | Ignite Web Omaha</title>
-  <meta name="description" content="A gallery of websites designed and built by Ignite Web Co. Clean, fast, SEO-ready sites for Omaha small businesses." />
-  <meta name="robots" content="index, follow" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Portfolio | Ignite Web Omaha</title>
+<meta content="A gallery of websites designed and built by Ignite Web Co. Clean, fast, SEO-ready sites for Omaha small businesses." name="description"/>
+<meta content="index, follow" name="robots"/>
+<!-- Open Graph -->
+<meta content="Ignite Web Co — Portfolio" property="og:title"/>
+<meta content="Browse recent websites and landing pages built by Ignite Web Co." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://ignitewebomaha.com/portfolio.html" property="og:url"/>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Ignite Web Co — Portfolio" />
-  <meta property="og:description" content="Browse recent websites and landing pages built by Ignite Web Co." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ignitewebomaha.com/portfolio.html" />
-  <meta property="og:image" content="/og-image.jpg" />
-
-  <!-- Favicon (optional) -->
-  <link rel="icon" href="/favicon.ico" />
-
-  <style>
+<!-- Favicon (optional) -->
+<link href="favicon.svg" rel="icon"/>
+<style>
     :root {
       --bg: #0b0b0d;
       --card: #141419;
@@ -96,51 +94,42 @@
     .brand-logo { background-color: #0ea5e9; height: 30px; width: 30px; border-radius: 10px; margin-right: 10px;}
     .container-nav { display: flex; flex-direction: row; justify-content: center; padding: 20px;}
   </style>
-</head>
+<link href="https://ignitewebomaha.com/portfolio.html" rel="canonical"/><style>.search input{box-sizing:border-box}.controls{gap:16px}header .container{padding-block:20px}nav a{margin-left:0}.nav>div{display:flex;gap:20px}.brand{color:#f5f7fb;font-size:20px}.chip:focus-visible,.btn:focus-visible{outline:2px solid #22d3ee;outline-offset:4px}@media(max-width:450px){.nav{align-items:start;flex-direction:column}.title{align-items:start;flex-direction:column}.actions{flex-wrap:wrap}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}}</style></head>
 <body>
-  <header>
-    <div class="container-nav">
-    <div class="brand-logo"></div>
-      <span class="brand"><a href="index.html">Ignite Web Co</a></span>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="page-hero" aria-labelledby="page-title">
-      <div class="eyebrow">Recent Work</div>
-      <h1 id="page-title">Websites I’ve built</h1>
-      <p class="lede">A growing gallery of real client projects and demo builds. Filter by type, search by name, and click through to see them live.</p>
-
-      <div class="controls" role="region" aria-label="Filters and search">
-        <div class="search">
-          <label for="search" class="sr-only">Search projects</label>
-          <input id="search" type="search" placeholder="Search projects (e.g., flooring, restaurant, landing page)" autocomplete="off" />
-        </div>
-        <div id="chips" class="chipbar" role="tablist" aria-label="Project filters"></div>
-      </div>
-    </section>
-
-    <section>
-      <div id="grid" class="grid" aria-live="polite"></div>
-      <div id="empty" class="empty">No projects match your filters yet. Try clearing filters or search.</div>
-    </section>
-
-    <footer>
-      <div class="container" style="padding:0">
+<header><div class="container"><nav class="nav"><a class="brand" href="index.html">Ignite Web Co</a><div><a href="index.html#services">Services</a><a href="index.html#contact">Start a project</a></div></nav></div></header>
+<main class="container">
+<section aria-labelledby="page-title" class="page-hero">
+<div class="eyebrow">Recent Work</div>
+<h1 id="page-title">Websites I’ve built</h1>
+<p class="lede">A growing gallery of real client projects and demo builds. Filter by type, search by name, and click through to see them live.</p>
+<div aria-label="Filters and search" class="controls" role="region">
+<div class="search">
+<label class="sr-only" for="search">Search projects</label>
+<input autocomplete="off" id="search" placeholder="Search projects (e.g., flooring, restaurant, landing page)" type="search"/>
+</div>
+<div aria-label="Project filters" class="chipbar" id="chips"></div>
+</div>
+</section>
+<section>
+<div aria-live="polite" class="grid" id="grid"></div>
+<div class="empty" id="empty">No projects match your filters yet. Try clearing filters or search.</div>
+</section>
+<footer>
+<div class="container" style="padding:0">
         © <span id="year"></span> Ignite Web Co. All rights reserved.
       </div>
-    </footer>
-  </main>
-
-  <script>
+</footer>
+</main>
+<script>
     // --- Data: Add your projects here ---
     // image: use a 1200x675 (16:9) JPG/WEBP placed in /projects/ or an absolute URL
     // tags: used for filtering; keep them lowercase for consistency
     const PROJECTS = [
+{title:"Fire Alarm Field Pro",url:"https://apps.apple.com/us/app/fire-alarm-field-pro/id6759137663",image:"photos/fire-alarm-field-pro.svg",type:"iOS app",tags:["app","software","field tools"],description:"Live iOS toolkit for fire alarm professionals, with field calculators, project tools, study resources, and AI assistance."},
     {
         title: "Nile Wave Cleaning",
         url: "https://nilewavecleaning.com/",
-        image: "/photos/nilewavecleaning.png",
+        image: "photos/nilewavecleaning.png",
         type: "Single page",
         tags: ["services", "cleaning", "local seo", "Single page"],
         description: "Local Cleaning company site with services, gallery, price form, and contact form. Optimized for Omaha local SEO."
@@ -148,7 +137,7 @@
       {
         title: "Superior Flooring",
         url: "https://superiorflooringomaha.com/",
-        image: "/photos/SuperiorLAnding.png",
+        image: "photos/superior-redesign.webp",
         type: "Multi‑page",
         tags: ["services", "flooring", "local seo", "multi-page"],
         description: "Local flooring company site with services, gallery, and contact form. Optimized for Omaha local SEO."
@@ -156,7 +145,7 @@
       {
         title: "BrightPath Tutors — Demo Landing",
         url: "https://ignitewebomaha.github.io/samplelandingpage/",
-        image: "/photos/samplewebsite.png",
+        image: "photos/samplewebsite.png",
         type: "Landing Page",
         tags: ["landing", "lead gen", "fast"],
         description: "High‑conversion one‑pager template with above‑the‑fold CTA and lightweight analytics."
@@ -164,7 +153,7 @@
       {
         title: "Restaurant Concept — Demo",
         url: "https://ignitewebomaha.github.io/glowing-lamp/",
-        image: "/photos/luminaweb.png",
+        image: "photos/luminaweb.png",
         type: "Multi‑page",
         tags: ["restaurant", "menu", "gallery", "multi-page"],
         description: "Modern restaurant demo with sticky menu, photo gallery, and online reservation CTA."
@@ -185,11 +174,11 @@
       const el = document.createElement('button');
       el.className = 'chip';
       el.type = 'button';
-      el.setAttribute('role','tab');
+      el.setAttribute('aria-pressed','false');
       el.textContent = label;
       el.onclick = () => {
         if (state.activeTags.has(label)) state.activeTags.delete(label); else state.activeTags.add(label);
-        el.classList.toggle('active');
+        el.classList.toggle('active'); el.setAttribute('aria-pressed',String(state.activeTags.has(label))); clearBtn.classList.toggle('active',!state.activeTags.size && !state.query); clearBtn.setAttribute('aria-pressed',String(!state.activeTags.size && !state.query));
         render();
       };
       return el;
@@ -198,9 +187,9 @@
     // Add a special "All" chip to clear
     const clearBtn = document.createElement('button');
     clearBtn.className = 'chip active';
-    clearBtn.type = 'button';
+    clearBtn.type = 'button'; clearBtn.setAttribute('aria-pressed','true');
     clearBtn.textContent = 'All';
-    clearBtn.onclick = () => { state.activeTags.clear(); searchEl.value = ''; state.query = ''; document.querySelectorAll('.chip').forEach(c => c.classList.remove('active')); clearBtn.classList.add('active'); render(); };
+    clearBtn.onclick = () => { state.activeTags.clear(); searchEl.value = ''; state.query = ''; document.querySelectorAll('.chip').forEach(c => {c.classList.remove('active');c.setAttribute('aria-pressed','false')}); clearBtn.classList.add('active'); clearBtn.setAttribute('aria-pressed','true'); render(); };
     chipsEl.appendChild(clearBtn);
 
     // Regular chips
@@ -210,7 +199,7 @@
     searchEl.addEventListener('input', (e) => {
       state.query = e.target.value.toLowerCase().trim();
       // Turn off the All chip when searching
-      clearBtn.classList.remove('active');
+      clearBtn.classList.toggle('active',!state.query && !state.activeTags.size); clearBtn.setAttribute('aria-pressed',String(!state.query && !state.activeTags.size));
       render();
     });
 
@@ -247,7 +236,7 @@
           <div class="tags">${project.tags.map(t => `<span class='tag'>${t}</span>`).join('')}</div>
           <div class="actions">
             <a class="btn" href="${project.url}" target="_blank" rel="noopener noreferrer">
-              ${iconExternal()} <span>View site</span>
+               <span>View site</span>
             </a>
             <a class="btn" href="mailto:ignitewebomaha@yahoo.com?subject=I want a site like ${encodeURIComponent(project.title)}">
               <!-- simple mailto CTA -->
@@ -271,9 +260,8 @@
     document.getElementById('year').textContent = new Date().getFullYear();
     render();
   </script>
-
-  <!-- Basic screen-reader only class -->
-  <style>
+<!-- Basic screen-reader only class -->
+<style>
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
 </body>
